@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: rgb(255, 196, 0); /*Drugi wariant: rgb(0, 183, 255)*/
+    --color-cont: rgba(0, 0, 0, 0.75);
+    --dark: #1b1b1b;
+    --gradient: #ff7b00; /*Drugi wariant: #00ff80*/
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-bg);
+    background: linear-gradient(45deg, var(--gradient), var(--color-bg));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bg_img--triangle {
+    width: 200px;
+    height: 200px;
+    transform: rotate(-25deg);
+    position: absolute;
+    animation: slideDown 7s linear infinite;
+}
+
+.bg_img--robot {
+    width: 500px;
+    height: 500px;
+    top: 7vh;
+    right: 10%;
+    position: absolute;
+    animation: robotMove 3s infinite;
+    opacity: 0.8;
+}
+
+.bg_img--dots {
+    width: 100vh;
+    height: 100vh;
+    position: absolute;
+    animation: rotateImg 25s linear infinite;
+    opacity: 0.8;
+    left: -25vw;
+    bottom: -25vw;
+}
+
+.container {
+    width: 66%;
+    height: 66%;
+    background: var(--color-cont);
+    background: linear-gradient(45deg, var(--color-cont), rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 0 10px 2px var(--dark);
+    overflow: hidden;
+}
+
+.profile_tags {
+    color: white;
+    padding: 20px 20px;
+    margin: 10px 450px;
+}
+
+span {
+    color: transparent;
+    background: linear-gradient(90deg, var(--gradient), rgba(255, 255, 255, 0.9));
+    -webkit-background-clip: text;
+    position: relative;
+    display: block;
+    font-weight: 700;
+    padding: 0 20px;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 36px;
+    padding: 0 20px;
+}
+
+p {
+    color: rgb(231, 231, 231);
+    font-weight: 500;
+    line-height: 25px;
+    padding-bottom: 10px;
+    margin: 25px 100px;
+    text-align: justify;
+}
+
+button {
+    width: 250px;
+    height: 50px;
+    margin: 10px 495px;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gradient);
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gradient);
+    box-shadow: 0 0 10px 1px var(--dark);
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--gradient);
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid #fff;
+    transition: 0.1s;
+}
+
+button a {
+    text-decoration: none;
+    color: var(--gradient);
+}
+
+button:hover a {
+    color: #fff;
+}
+
+@keyframes slideDown {
+    from {transform: translateX(-30vw) translateY(-75vh) rotate(0);}
+    to {transform: translateX(30vw) translateY(50vh) rotate(360deg);}
+}
+
+@keyframes rotateImg {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes robotMove {
+    0% {transform: rotate(0deg);}
+    10% {transform: rotate(-10deg);}
+    15% {transform: rotate(10deg);}
+    100% {transform: rotate(0deg);}
+}
+
+/* .container {
+    width: 66%;
+    height: 66%;
+    background: var(--color-cont);
+    background: linear-gradient(45deg, var(--color-cont), rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.bg_image {
+    position: absolute;
+}
+
+.bg_image--box {
+    top: 0;
+    left: 50%;
+    height: 60vh;
+    animation: rotateImg 25s linear infinite;
+}
+
+.bg_image--img {
+    top: 0;
+    right: 60%;
+    height: 30vh;
+    animation: slideDown 10s linear infinite;
+}
+
+*/
